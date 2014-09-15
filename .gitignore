@@ -1,0 +1,7 @@
+*.Spartan
+uCOS-II.uvgui_Spartan.bak
+*.swp
+Thumbs.db
+Desktop.ini
+build/
+*.*~

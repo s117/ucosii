@@ -1,0 +1,1150 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Bitman\uC_OS\uCOS-II\uCOS-II.uvproj
+Project File Date:  03/05/2014
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling OS_CORE.C...
+compiling OS_FLAG.C...
+compiling OS_MBOX.C...
+compiling OS_MEM.C...
+compiling OS_MUTEX.C...
+compiling OS_Q.C...
+compiling OS_SEM.C...
+compiling OS_TASK.C...
+compiling OS_TIME.C...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+.\uCOS-II.axf: Error: L6200E: Symbol OSIntEnter multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSIntExit multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSIntNesting multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSPrioCur multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSPrioHighRdy multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSRunning multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTCBCur multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTCBHighRdy multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTimeTick multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSEventTbl multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSFlagTbl multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskStatStk multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskIdleStk multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTCBPrioTbl multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTCBTbl multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMemTbl multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQTbl multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMapTbl multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSUnMapTbl multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSCtxSwCtr multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSEventFreeList multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSFlagFreeList multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSCPUUsage multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSIdleCtrMax multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSIdleCtrRun multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSStatRdy multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSIntExitY multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSLockNesting multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSRdyGrp multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSRdyTbl multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskCtr multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSIdleCtr multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTCBFreeList multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTCBList multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMemFreeList multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQFreeList multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTime multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_TaskStat multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_TaskIdle multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSInit multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSSchedLock multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_Sched multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSSchedUnlock multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSStart multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSStatInit multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSVersion multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_Dummy multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_EventTaskRdy multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_EventTaskWait multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_EventTO multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_EventWaitListInit multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_TCBInit multiply defined (by ucos_ii.o and os_core.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskCreateExt multiply defined (by ucos_ii.o and os_task.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTimeDly multiply defined (by ucos_ii.o and os_time.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_FlagInit multiply defined (by ucos_ii.o and os_flag.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_MemInit multiply defined (by ucos_ii.o and os_mem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_QInit multiply defined (by ucos_ii.o and os_q.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSFlagAccept multiply defined (by ucos_ii.o and os_flag.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSFlagCreate multiply defined (by ucos_ii.o and os_flag.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OS_FlagUnlink multiply defined (by ucos_ii.o and os_flag.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSFlagDel multiply defined (by ucos_ii.o and os_flag.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSFlagPend multiply defined (by ucos_ii.o and os_flag.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSFlagPost multiply defined (by ucos_ii.o and os_flag.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSFlagQuery multiply defined (by ucos_ii.o and os_flag.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMboxAccept multiply defined (by ucos_ii.o and os_mbox.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMboxCreate multiply defined (by ucos_ii.o and os_mbox.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMboxDel multiply defined (by ucos_ii.o and os_mbox.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMboxPend multiply defined (by ucos_ii.o and os_mbox.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMboxPost multiply defined (by ucos_ii.o and os_mbox.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMboxPostOpt multiply defined (by ucos_ii.o and os_mbox.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMboxQuery multiply defined (by ucos_ii.o and os_mbox.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMemCreate multiply defined (by ucos_ii.o and os_mem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMemGet multiply defined (by ucos_ii.o and os_mem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMemPut multiply defined (by ucos_ii.o and os_mem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMemQuery multiply defined (by ucos_ii.o and os_mem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMutexAccept multiply defined (by ucos_ii.o and os_mutex.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMutexCreate multiply defined (by ucos_ii.o and os_mutex.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMutexDel multiply defined (by ucos_ii.o and os_mutex.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMutexPend multiply defined (by ucos_ii.o and os_mutex.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMutexPost multiply defined (by ucos_ii.o and os_mutex.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSMutexQuery multiply defined (by ucos_ii.o and os_mutex.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQAccept multiply defined (by ucos_ii.o and os_q.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQCreate multiply defined (by ucos_ii.o and os_q.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQDel multiply defined (by ucos_ii.o and os_q.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQFlush multiply defined (by ucos_ii.o and os_q.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQPend multiply defined (by ucos_ii.o and os_q.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQPost multiply defined (by ucos_ii.o and os_q.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQPostFront multiply defined (by ucos_ii.o and os_q.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQPostOpt multiply defined (by ucos_ii.o and os_q.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSQQuery multiply defined (by ucos_ii.o and os_q.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSSemAccept multiply defined (by ucos_ii.o and os_sem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSSemCreate multiply defined (by ucos_ii.o and os_sem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSSemDel multiply defined (by ucos_ii.o and os_sem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSSemPend multiply defined (by ucos_ii.o and os_sem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSSemPost multiply defined (by ucos_ii.o and os_sem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSSemQuery multiply defined (by ucos_ii.o and os_sem.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskChangePrio multiply defined (by ucos_ii.o and os_task.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskCreate multiply defined (by ucos_ii.o and os_task.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskDel multiply defined (by ucos_ii.o and os_task.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskDelReq multiply defined (by ucos_ii.o and os_task.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskResume multiply defined (by ucos_ii.o and os_task.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskStkChk multiply defined (by ucos_ii.o and os_task.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskSuspend multiply defined (by ucos_ii.o and os_task.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTaskQuery multiply defined (by ucos_ii.o and os_task.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTimeDlyHMSM multiply defined (by ucos_ii.o and os_time.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTimeDlyResume multiply defined (by ucos_ii.o and os_time.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTimeGet multiply defined (by ucos_ii.o and os_time.o).
+.\uCOS-II.axf: Error: L6200E: Symbol OSTimeSet multiply defined (by ucos_ii.o and os_time.o).
+".\uCOS-II.axf" - 108 Errors, 0 Warning(s).
+Target not created
+Clean started: Project: 'uCOS-II'
+   deleting intermediate output files for target 'Target 1'
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskSwHook (referred from os_cpu_a.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSInitHookBegin (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSInitHookEnd (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTCBInitHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskCreateHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskDelHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskIdleHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskStatHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTimeTickHook (referred from ucos_ii.o).
+".\uCOS-II.axf" - 9 Errors, 0 Warning(s).
+Target not created
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+src\os\../includes/OS_CFG.H(113): error:  #20: identifier "INT16U" is undefined
+compiling logger.c...
+src\usr\../includes/OS_CFG.H(113): error:  #20: identifier "INT16U" is undefined
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+".\uCOS-II.axf" - 2 Errors, 0 Warning(s).
+Target not created
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskSwHook (referred from os_cpu_a.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSInitHookBegin (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSInitHookEnd (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTCBInitHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskCreateHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskDelHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskIdleHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskStatHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTimeTickHook (referred from ucos_ii.o).
+".\uCOS-II.axf" - 9 Errors, 0 Warning(s).
+Target not created
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskSwHook (referred from os_cpu_a.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSInitHookBegin (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSInitHookEnd (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTCBInitHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskCreateHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskDelHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskIdleHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTaskStatHook (referred from ucos_ii.o).
+.\uCOS-II.axf: Error: L6218E: Undefined symbol OSTimeTickHook (referred from ucos_ii.o).
+".\uCOS-II.axf" - 9 Errors, 0 Warning(s).
+Target not created
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+src\cpu\OS_CPU_C.C(73): error:  #20: identifier "OS_TCB" is undefined
+src\cpu\OS_CPU_C.C(92): error:  #20: identifier "OS_TCB" is undefined
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+".\uCOS-II.axf" - 2 Errors, 0 Warning(s).
+Target not created
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+src\cpu\OS_CPU_C.C(23): error:  #5: cannot open source input file "../includes/usoc_ii.h": No such file or directory
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+".\uCOS-II.axf" - 1 Errors, 0 Warning(s).
+Target not created
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25392 RO-data=264 RW-data=104 ZI-data=11172  
+".\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\uCOS-II.axf" 
+Internal DLL Error
+Clean started: Project: 'uCOS-II'
+   deleting intermediate output files for target 'Target 1'
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25392 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25392 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25392 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.274V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x00000278 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Jun 19 2012 11:29:30
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x00000334 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25384 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.274V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x004D69D0 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Jun 19 2012 11:29:30
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x004D6A8C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+Programming Failed!
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25384 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.274V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x00A8DC24 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Jun 19 2012 11:29:30
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x00A8DCE0 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Failed!
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25384 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.274V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x01E2C7A8 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Jun 19 2012 11:29:30
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x01E2C864 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+Verify Failed!
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x00000CA0 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x00000D5C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+.\build\uCOS-II.axf: Error: L6218E: Undefined symbol idleMS (referred from logger.o).
+".\build\uCOS-II.axf" - 1 Errors, 0 Warning(s).
+Target not created
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25444 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25444 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x000000F8 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x000001B4 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x400000F0 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x400001AC after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25444 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x00006440 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x000064FC after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25440 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x00006438 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x000064F4 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25436 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x00000C90 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x00000D4C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25440 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 0 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x00000274 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x00000330 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+src\usr\logger.c(45): warning:  #177-D: variable "freq" was declared but never referenced
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25312 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 1 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x00000CA4 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x00000D60 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+src\usr\logger.c(45): warning:  #177-D: variable "freq" was declared but never referenced
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25312 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 1 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x000000F8 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x000001B4 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+src\usr\logger.c(45): warning:  #177-D: variable "freq" was declared but never referenced
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25316 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 1 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x000002D8 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x00000394 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+src\usr\logger.c(45): warning:  #177-D: variable "freq" was declared but never referenced
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25312 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 1 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x00000278 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x00000334 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+src\usr\logger.c(45): warning:  #177-D: variable "freq" was declared but never referenced
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25312 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 1 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x000002C0 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x0000037C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...
+Rebuild target 'Target 1'
+assembling OS_CPU_A.S...
+compiling OS_CPU_C.C...
+assembling STARTUP.S...
+compiling ucos_ii.c...
+compiling logger.c...
+src\usr\logger.c(45): warning:  #177-D: variable "freq" was declared but never referenced
+compiling SYSTEM_CODE.C...
+assembling UTILS_A.S...
+compiling UTILS_C.C...
+linking...
+Program Size: Code=25312 RO-data=264 RW-data=104 ZI-data=11172  
+FromELF: creating hex file...
+".\build\uCOS-II.axf" - 0 Errors, 1 Warning(s).
+Load "D:\\Bitman\\uC_OS\\uCOS-II\\build\\uCOS-II.axf" 
+ProjectFile = D:\Bitman\uC_OS\uCOS-II\JLinkArm_Target 1.ini
+Device = S3C2440A
+Info: Device "S3C2440A" selected (0 KB flash, 0 KB RAM).
+VTarget = 3.306V
+Info: TotalIRLen = 4, IRPrint = 0x01
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+Info: RTCK is not connected
+Info: Auto JTAG speed: 6000 kHz
+Info: J-Link: ARM9 CP15 Settings changed: 0xC0000078 from 0x00000078, MMU Off, ICache Off, DCache Off
+***JLink Warning: PC of target system has unexpected value of 0x00000278 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+DLL version V4.50j, compiled Jun 26 2012 09:19:07
+Firmware: J-Link ARM V8 compiled Nov 14 2012 22:34:52
+Hardware: V8.00
+Hardware-Breakpoints: 2
+Software-Breakpoints: 8192
+Watchpoints:          0
+Found 1 JTAG device, Total IRLen = 4:
+ Id of device #0: 0x0032409D
+ARM9 identified.
+JTAG speed: 1000 kHz
+***JLink Warning: PC of target system has unexpected value of 0x00000334 after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Erase Done.
+Programming Done.
+Verify OK.
+***JLink Warning: PC of target system has unexpected value of 0x4000022C after reset.
+Info: CP15.0.0: 0x41129200: ARM, Architecure 4T
+Info: CP15.0.1: 0x0D172172: ICache: 16kB (64*8*32), DCache: 16kB (64*8*32)
+Info: Cache type: Separate, Write-back, Format A
+JTAG speed: 1000 kHz
+Application running ...

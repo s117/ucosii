@@ -1,0 +1,1696 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 PRESERVE8
+    2 00000000         
+    3 00000000                 IMPORT           Main
+    4 00000000                 IMPORT           HandleIRQ
+    5 00000000                 IMPORT           OSCtxSw
+    6 00000000                 IMPORT           OSTickISR
+    7 00000000                 IMPORT           OSTCBCur
+    8 00000000                 IMPORT           OSIntNesting
+    9 00000000                 IMPORT           OSIntStk
+   10 00000000         
+   11 00000000         ;-------------------------------------------------------
+                       --------------------------------------------------------
+                       --------------
+   12 00000000 00005FFF 
+                       BK_IRQ  RLIST            {R0-R12,LR}
+   13 00000000 00009FFF 
+                       RE_IRQ  RLIST            {R0-R12,PC}
+   14 00000000 000040FF 
+                       BK_FIQ  RLIST            {R0-R7,LR}
+   15 00000000 00000FF0 
+                       BK_APCS RLIST            {R4-R11}
+   16 00000000         
+   17 00000000 00000007 
+                       MAX_SWINUM
+                               EQU              7
+   18 00000000         
+   19 00000000 32000000 
+                       _STACKBASEADDR
+                               EQU              0x32000000
+   20 00000000 48000000 
+                       rBWSCON EQU              0x48000000
+   21 00000000 4A000000 
+                       rSRCPND EQU              0X4A000000
+   22 00000000 4A000004 
+                       rINTMOD EQU              0X4A000004
+   23 00000000 4A000008 
+                       rINTMSK EQU              0X4A000008
+   24 00000000 4A000010 
+                       rINTPND EQU              0x4A000010
+   25 00000000 4A000014 
+                       rINTOFFSET
+                               EQU              0x4A000014
+   26 00000000 4A000018 
+                       rSUBSRCPND
+                               EQU              0x4A000018
+   27 00000000 4A00001C 
+                       rINTSUBMSK
+                               EQU              0X4A00001C
+   28 00000000 4C000000 
+                       rLOCKTIME
+                               EQU              0x4C000000
+   29 00000000 4C000004 
+                       rMPLLCON
+                               EQU              0x4C000004
+   30 00000000 4C000008 
+                       rUPLLCON
+                               EQU              0x4C000008
+   31 00000000 4C000014 
+                       rCLKDIVN
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                               EQU              0x4C000014
+   32 00000000 50000000 
+                       rULCON0 EQU              0x50000000
+   33 00000000 50000004 
+                       rUCON0  EQU              0x50000004
+   34 00000000 50000008 
+                       rUFCON0 EQU              0x50000008
+   35 00000000 5000000C 
+                       rUMCON0 EQU              0x5000000C
+   36 00000000 50000028 
+                       rUBRDIV0
+                               EQU              0x50000028
+   37 00000000 50000023 
+                       rUTXH0  EQU              0x50000023
+   38 00000000 50000027 
+                       rURXH0  EQU              0x50000027
+   39 00000000 50004000 
+                       rULCON1 EQU              0x50004000
+   40 00000000 50004004 
+                       rUCON1  EQU              0x50004004
+   41 00000000 50004008 
+                       rUFCON1 EQU              0x50004008
+   42 00000000 5000400C 
+                       rUMCON1 EQU              0x5000400C
+   43 00000000 50004028 
+                       rUBRDIV1
+                               EQU              0x50004028
+   44 00000000 50004023 
+                       rUTXH1  EQU              0x50004023
+   45 00000000 50004027 
+                       rURXH1  EQU              0x50004027
+   46 00000000 53000000 
+                       rWTCON  EQU              0x53000000
+   47 00000000 56000010 
+                       rGPBCON EQU              0x56000010
+   48 00000000 56000014 
+                       rGPBDAT EQU              0x56000014
+   49 00000000 56000060 
+                       rGPGCON EQU              0x56000060
+   50 00000000 56000068 
+                       rGPGUP  EQU              0x56000068
+   51 00000000 56000070 
+                       rGPHCON EQU              0x56000070
+   52 00000000 56000074 
+                       rGPHDAT EQU              0x56000074
+   53 00000000 56000078 
+                       rGPHUP  EQU              0x56000078
+   54 00000000 560000A4 
+                       rEINTMASK
+                               EQU              0x560000A4
+   55 00000000 560000A8 
+                       rEINTPEND
+                               EQU              0x560000A8
+   56 00000000         
+   57 00000000         
+   58 00000000 00000002 
+                       B1_BWCON
+                               EQU              2_0010
+   59 00000000 00000001 
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                       B2_BWCON
+                               EQU              2_0001
+   60 00000000 00000001 
+                       B3_BWCON
+                               EQU              2_0001
+   61 00000000 00000001 
+                       B4_BWCON
+                               EQU              2_0001
+   62 00000000 00000001 
+                       B5_BWCON
+                               EQU              2_0001
+   63 00000000 00000002 
+                       B6_BWCON
+                               EQU              2_0010
+   64 00000000 00000002 
+                       B7_BWCON
+                               EQU              2_0010
+   65 00000000         
+   66 00000000         
+   67 00000000 00000038 
+                       U_MDIV  EQU              0x38        ;M/P/S DIV FOR UPLL
+                                                            ,for more see chapt
+                                                            er"PLL VALUE TABLE"
+                                                             in 2440datasheet
+   68 00000000 00000002 
+                       U_PDIV  EQU              0x2         ;UPLL = 48.00MHz
+   69 00000000 00000002 
+                       U_SDIV  EQU              0x2
+   70 00000000         
+   71 00000000 0000007F 
+                       M_MDIV  EQU              0x7f        ;M/P/S DIV FOR MPLL
+                                                            ,for more see chapt
+                                                            er"PLL VALUE TABLE"
+                                                             in 2440datasheet
+   72 00000000 00000002 
+                       M_PDIV  EQU              0x2         ;MPLL = 405.00MHz
+   73 00000000 00000001 
+                       M_SDIV  EQU              0x1
+   74 00000000         
+   75 00000000         
+   76 00000000 00000010 
+                       USRMODE EQU              0x10
+   77 00000000 00000011 
+                       FIQMODE EQU              0x11
+   78 00000000 00000012 
+                       IRQMODE EQU              0x12
+   79 00000000 00000013 
+                       SVCMODE EQU              0x13
+   80 00000000 00000017 
+                       ABTMODE EQU              0x17
+   81 00000000 0000001B 
+                       UNDMODE EQU              0x1B
+   82 00000000 0000001F 
+                       SYSMODE EQU              0x1F
+   83 00000000         
+   84 00000000         
+   85 00000000 00000080 
+                       IRQMSK  EQU              0x80
+   86 00000000 00000040 
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+                       FIQMSK  EQU              0x40
+   87 00000000 000000C0 
+                       NOINT   EQU              0xC0
+   88 00000000         
+   89 00000000         
+   90 00000000 31FFC800 
+                       StackUse
+                               EQU              (_STACKBASEADDR-0X3800)
+   91 00000000 31FFD800 
+                       StackSvc
+                               EQU              (_STACKBASEADDR-0x2800)
+   92 00000000 31FFDC00 
+                       StackUnd
+                               EQU              (_STACKBASEADDR-0x2400)
+   93 00000000 31FFE000 
+                       StackAbt
+                               EQU              (_STACKBASEADDR-0x2000)
+   94 00000000 31FFF000 
+                       StackIrq
+                               EQU              (_STACKBASEADDR-0x1000)
+   95 00000000 32000000 
+                       StackFiq
+                               EQU              (_STACKBASEADDR-0x0)
+   96 00000000         
+   97 00000000         
+   98 00000000 00000064 
+                       OS_IntStkSIZE
+                               EQU              100
+   99 00000000 00000004 
+                       OS_StkItemSIZE
+                               EQU              4
+  100 00000000         ;-------------------------------------------------------
+                       --------------------------------------------------------
+                       --------------
+  101 00000000                 CODE32
+  102 00000000                 AREA             Init,CODE,READONLY,ALIGN=2
+  103 00000000                 ENTRY
+  104 00000000         ;VICTOR TABLE
+  105 00000000 EA000006        B                ResetInit
+  106 00000004 EA00005E        B                HandlerUndef
+  107 00000008 EA00005E        B                HandlerSWI
+  108 0000000C EA000091        B                HandlerPabort
+  109 00000010 EA000091        B                HandlerDabort
+  110 00000014 EAFFFFFE        B                .
+  111 00000018 EA000090        B                HandlerIRQ
+  112 0000001C EA0000D7        B                HandlerFIQ
+  113 00000020         ;VICTOR TABLE END
+  114 00000020         ;-------------------------------------------------------
+                       --------------------------------------------------------
+                       --------------
+  115 00000020         ResetInit
+  116 00000020 E3A00453        LDR              R0,=rWTCON  ;Disable WDT
+  117 00000024 E3A01000        LDR              R1,=0x0
+  118 00000028 E5801000        STR              R1,[R0]
+  119 0000002C         
+  120 0000002C E59F0394        LDR              R0,=rINTMSK ;Mask IRQ
+  121 00000030 E3E01000        LDR              R1,=0xFFFFFFFF
+  122 00000034 E5801000        STR              R1,[R0]
+  123 00000038 E59F038C        LDR              R0,=rINTSUBMSK
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+  124 0000003C E59F138C        LDR              R1,=0x0000FFFF
+  125 00000040 E5801000        STR              R1,[R0]
+  126 00000044         
+  127 00000044         ;Start set new clock
+  128 00000044 E3A00313        LDR              R0,=rLOCKTIME
+  129 00000048 E3E01000        LDR              R1,=0xFFFFFFFF ;See Chapter"LOC
+                                                            KTIME REGISTER"In 2
+                                                            400datasheet
+  130 0000004C E5801000        STR              R1,[R0]
+  131 00000050         
+  132 00000050 E59F037C        LDR              R0,=rCLKDIVN
+  133 00000054 E3A01005        MOV              R1,#5       ;FCLK:HCLK:PCLK = 1
+                                                            :4:8,For more see C
+                                                            hapter"CLKDIVN REGI
+                                                            STER" In 2400datash
+                                                            eet
+  134 00000058 E5801000        STR              R1,[R0]
+  135 0000005C         
+  136 0000005C E59F0374        LDR              R0,=rUPLLCON
+  137 00000060 E59F1374        LDR              R1,=((U_MDIV<<12)+(U_PDIV<<4)+U
+_SDIV)
+  138 00000064 E5801000        STR              R1,[R0]
+  139 00000068 E1A00000        NOP
+  140 0000006C E1A00000        NOP
+  141 00000070 E1A00000        NOP
+  142 00000074 E1A00000        NOP
+  143 00000078 E1A00000        NOP
+  144 0000007C E1A00000        NOP
+  145 00000080 E1A00000        NOP
+  146 00000084         
+  147 00000084 E59F0354        LDR              R0,=rMPLLCON
+  148 00000088 E59F1354        LDR              R1,=((M_MDIV<<12)+(M_PDIV<<4)+M
+_SDIV)
+  149 0000008C E5801000        STR              R1,[R0]
+  150 00000090         
+  151 00000090 EE110F10        MRC              p15,0,r0,c1,c0,0 
+                                                            ;Set Async Bus Mode
+                                                            
+  152 00000094 E3800103        ORR              r0,r0,#0xC0000000
+  153 00000098 EE010F10        MCR              p15,0,r0,c1,c0,0
+  154 0000009C         
+  155 0000009C         ;New clock seted
+  156 0000009C EB00002A        BL               StackInit   ;Initial stack
+  157 000000A0 E59F0340        LDR              R0,=BUSINIT ;Initial Memory
+  158 000000A4 E3A01312        LDR              R1,=rBWSCON
+  159 000000A8 E8B001FC        LDMIA            R0!, {R2-R8} ;MARK START LDMIA/
+                                                            STMIA
+  160 000000AC E8A101FC        STMIA            R1!, {R2-R8}
+  161 000000B0 E8B000FC        LDMIA            R0!, {R2-R7}
+  162 000000B4 E8A100FC        STMIA            R1!, {R2-R7} ;MARK END
+  163 000000B8         
+  164 000000B8 E59F032C        LDR              R0,=rGPHCON ;Initial Serial Por
+                                                            t:enable 
+  165 000000BC E59F132C        LDR              R1,=64170
+  166 000000C0 E5801000        STR              R1,[R0]
+  167 000000C4 E59F0328        LDR              R0,=rGPHUP
+  168 000000C8 E3A01000        LDR              R1,=0x0
+  169 000000CC         ;Port:0
+  170 000000CC E5801000        STR              R1,[R0]
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+  171 000000D0 E3A00205        LDR              R0,=rULCON0
+  172 000000D4 E3A01003        LDR              R1,=0x03    ;8n1
+  173 000000D8 E5801000        STR              R1,[R0]
+  174 000000DC E3A00245        LDR              R0,=rUCON0
+  175 000000E0 E3A01045        LDR              R1,=69      ;ÓÃPCLK×÷ÎªÊäÈë¹¤×÷
+                                                            Ê±ÖÓ£¬ÖÐ¶Ï·½Ê½´«ËÍ£
+                                                            ¬¹Ø±ÕÊý¾Ý½ÓÊÕ³¬Ê±£¬
+                                                            Êý¾Ý´íÎó²úÉúÖÐ¶Ï
+  176 000000E4 E5801000        STR              R1,[R0]
+  177 000000E8 E3A00285        LDR              R0,=rUFCON0
+  178 000000EC E3A010C1        LDR              R1,=193     ;ÆôÓÃFIFO,·¢ËÍfifo´
+                                                            ¥·¢Éî¶È48×Ö½Ú,½ÓÊÕf
+                                                            ifo´¥·¢Éî¶È1×Ö½Ú
+  179 000000F0 E5801000        STR              R1,[R0]
+  180 000000F4 E3A002C5        LDR              R0,=rUMCON0
+  181 000000F8 E3A01000        LDR              R1,=0x00    ;AFC Disable
+  182 000000FC E5801000        STR              R1,[R0]
+  183 00000100 E59F02F0        LDR              R0,=rUBRDIV0
+  184 00000104 E3A0101A        LDR              R1,=26      ;115200bps
+  185 00000108 E5801000        STR              R1,[R0]
+  186 0000010C         ;Port1
+  187 0000010C E59F02E8        LDR              R0,=rULCON1
+  188 00000110 E3A01003        LDR              R1,=0x03    ;8n1
+  189 00000114 E5801000        STR              R1,[R0]
+  190 00000118 E59F02E0        LDR              R0,=rUCON1
+  191 0000011C E3A01045        LDR              R1,=69      ;ÓÃPCLK×÷ÎªÊäÈë¹¤×÷
+                                                            Ê±ÖÓ£¬ÖÐ¶Ï·½Ê½´«ËÍ£
+                                                            ¬¹Ø±ÕÊý¾Ý½ÓÊÕ³¬Ê±£¬
+                                                            Êý¾Ý´íÎó²úÉúÖÐ¶Ï
+  192 00000120 E5801000        STR              R1,[R0]
+  193 00000124 E59F02D8        LDR              R0,=rUFCON1
+  194 00000128 E3A010C1        LDR              R1,=193     ;ÆôÓÃFIFO,·¢ËÍfifo´
+                                                            ¥·¢Éî¶È48×Ö½Ú,½ÓÊÕf
+                                                            ifo´¥·¢Éî¶È1×Ö½Ú
+  195 0000012C E5801000        STR              R1,[R0]
+  196 00000130 E59F02D0        LDR              R0,=rUMCON1
+  197 00000134 E3A01000        LDR              R1,=0x00    ;AFC Disable
+  198 00000138 E5801000        STR              R1,[R0]
+  199 0000013C E59F02C8        LDR              R0,=rUBRDIV1
+  200 00000140 E59F12C8        LDR              R1,=325     ;9600bps
+  201 00000144 E5801000        STR              R1,[R0]
+  202 00000148         ;×¢:¹ØÓÚUBRDIVn:ÔÚPCLK=67.5Mhz:36-115200bps  435-9600bps
+                       ,ÔÚPCLK=50Mhz:26-115200bps  325-9600bps
+  203 00000148         
+  204 00000148         ; LDR R0,=rGPBCON   ;Initial LED&BEEP
+  205 00000148         ; LDR R1,=0x155555
+  206 00000148         ; STR R1,[R0]     
+  207 00000148         
+  208 00000148         
+  209 00000148 EAFFFFFE        B                Main
+  210 0000014C         ;ResetInit END
+  211 0000014C         ;-------------------------------------------------------
+                       --------------------------------------------------------
+                       --------------
+  212 0000014C         StackInit
+  213 0000014C E1A0000E        MOV              R0,LR
+  214 00000150         
+  215 00000150 E321F0D3        MSR              CPSR_c,#(SVCMODE:OR:IRQMSK:OR:F
+IQMSK)
+
+
+
+ARM Macro Assembler    Page 7 
+
+
+  216 00000154 E59FD2B8        LDR              SP,=StackSvc
+  217 00000158 E321F09B        MSR              CPSR_c,#(UNDMODE:OR:IRQMSK:OR:I
+RQMSK)
+  218 0000015C E59FD2B4        LDR              SP,=StackUnd
+  219 00000160 E321F0D7        MSR              CPSR_c,#(ABTMODE:OR:IRQMSK:OR:F
+IQMSK)
+  220 00000164 E59FD2B0        LDR              SP,=StackAbt
+  221 00000168 E321F0D2        MSR              CPSR_c,#(IRQMODE:OR:IRQMSK:OR:F
+IQMSK)
+  222 0000016C E59FD2AC        LDR              SP,=StackIrq
+  223 00000170 E321F0D1        MSR              CPSR_c,#(FIQMODE:OR:IRQMSK:OR:F
+IQMSK)
+  224 00000174 E59FD2A8        LDR              SP,=StackFiq
+  225 00000178 E321F0DF        MSR              CPSR_c,#(SYSMODE:OR:IRQMSK:OR:F
+IQMSK)
+  226 0000017C E59FD2A4        LDR              SP,=StackUse
+  227 00000180         
+  228 00000180 E1B0F000        MOVS             PC,R0       ;MOVS?
+  229 00000184         
+  230 00000184         ;-------------------------------------------------------
+                       --------------------------------------------------------
+                       --------------
+  231 00000184         HandlerUndef
+  232 00000184 EAFFFFA5        B                ResetInit
+  233 00000188         ;-------------------------------------------------------
+                       --------------------------------------------------------
+                       -------------- 
+  234 00000188         HandlerSWI                           ;0:IRQoff,1:IRQon,2
+                                                            :FIQoff,3:FIQon,4:S
+                                                            etInterruptREG,5:OS
+                                                            CtxSw,6:OSSetCPSR(R
+                                                            1=CPSR_VALUE)
+  235 00000188 E3500007        CMP              R0,#MAX_SWINUM
+  236 0000018C 379FF100        LDRLO            PC,[PC,R0,LSL#2]
+  237 00000190 E1B0F00E        MOVS             PC,LR
+  238 00000194         
+  239 00000194         SWIFUNC_SWI
+  240 00000194 00000000        DCD              IRQDisable
+  241 00000198 00000000        DCD              IRQEnable
+  242 0000019C 00000000        DCD              FIQDisable
+  243 000001A0 00000000        DCD              FIQEnable
+  244 000001A4 00000000        DCD              SETIRQReg
+  245 000001A8 00000000        DCD              OSCtxSw
+  246 000001AC 00000000        DCD              OSSetCPSR
+  247 000001B0         IRQDisable
+  248 000001B0 E14F0000        MRS              R0,SPSR
+  249 000001B4 E3800080        ORR              R0,#IRQMSK
+  250 000001B8 E161F000        MSR              SPSR_c,R0
+  251 000001BC E1B0F00E        MOVS             PC,LR
+  252 000001C0         IRQEnable
+  253 000001C0 E14F0000        MRS              R0,SPSR
+  254 000001C4 E3C00080        BIC              R0,#IRQMSK
+  255 000001C8 E161F000        MSR              SPSR_c,R0
+  256 000001CC E1B0F00E        MOVS             PC,LR
+  257 000001D0         FIQDisable
+  258 000001D0 E14F0000        MRS              R0,SPSR
+  259 000001D4 E3800040        ORR              R0,#FIQMSK
+  260 000001D8 E161F000        MSR              SPSR_c,R0
+  261 000001DC E1B0F00E        MOVS             PC,LR
+
+
+
+ARM Macro Assembler    Page 8 
+
+
+  262 000001E0         FIQEnable
+  263 000001E0 E14F0000        MRS              R0,SPSR
+  264 000001E4 E3C00040        BIC              R0,#FIQMSK
+  265 000001E8 E161F000        MSR              SPSR_c,R0
+  266 000001EC E1B0F00E        MOVS             PC,LR
+  267 000001F0         SETIRQReg
+  268 000001F0 E92D0003        STMDB            SP!,{R0,R1} ;STMFD
+  269 000001F4 E59F0230        LDR              R0,=rGPGCON
+  270 000001F8 E59F1230        LDR              R1,=8431746 ;ÉèÖÃK1~K6ÎªEINT
+  271 000001FC E5801000        STR              R1,[R0]
+  272 00000200 E59F022C        LDR              R0,=rGPGUP  ;×¢ÊÍµôÕâ¸öÉèÖÃ¿ÉÒÔ
+                                                            Õý³£Ê¹ÓÃ
+  273 00000204 E3A01000        LDR              R1,=0       ;ÆôÓÃ¶Ë¿ÚÉÏÀ­,ÎÈ¶¨Ð
+                                                            ÅºÅ,¼ÇµÃÏû¶¶10ms
+  274 00000208 E5801000        STR              R1,[R0]
+  275 0000020C E59F0224        LDR              R0,=rEINTMASK
+  276 00000210 E59F1224        LDR              R1,=(~(1<<8))&(~(1<<11))&(~(1<<
+13))&(~(1<<14))&(~(1<<15))&(~(1<<19)) 
+                                                            ;¿ªÆôÍâ²¿°´¼üÖÐ¶Ï
+  277 00000214 E5801000        STR              R1,[R0]
+  278 00000218 E59F0220        LDR              R0,=rEINTPEND
+  279 0000021C E1A01000        MOV              R1,R0       ;Çå³ýÍâ²¿ÖÐ¶Ï¹ÒÆð¼Ä
+                                                            ´æÆ÷
+  280 00000220 E5801000        STR              R1,[R0]
+  281 00000224 E59F0218        LDR              R0,=rINTMOD
+  282 00000228 E3A01000        LDR              R1,=0       ;È«²¿Ê¹ÓÃIRQ´¦Àí
+  283 0000022C E5801000        STR              R1,[R0]
+  284 00000230 E59F0190        LDR              R0,=rINTMSK
+  285 00000234 E59F120C        LDR              R1,=0xEF7FBFDF ;UART0&1/EINT8_2
+                                                            3/TIMER_4 ´ò¿ª
+  286 00000238 E5801000        STR              R1,[R0]
+  287 0000023C E59F0188        LDR              R0,=rINTSUBMSK
+  288 00000240 E59F1204        LDR              R1,=32722   ;INT_ERR1 INT_RXD1 
+                                                            INT_ERR0 INT_RXD0 ´
+                                                            ò¿ª
+  289 00000244 E5801000        STR              R1,[R0]
+  290 00000248 E8BD0003        LDMIA            SP!,{R0,R1} ;LDMFD
+  291 0000024C E1B0F00E        MOVS             PC,LR
+  292 00000250         OSSetCPSR
+  293 00000250 E16FF000        MSR              SPSR_cxsf,R0
+  294 00000254 E1B0F00E        MOVS             PC,LR
+  295 00000258         
+  296 00000258         ;HandlerSWI END
+  297 00000258         ;-------------------------------------------------------
+                       --------------------------------------------------------
+                       --------------
+  298 00000258         HandlerPabort
+  299 00000258 EAFFFFFE        b                HandlerPabort
+  300 0000025C         ;-------------------------------------------------------
+                       --------------------------------------------------------
+                       --------------
+  301 0000025C         HandlerDabort
+  302 0000025C EAFFFFFE        b                HandlerDabort
+  303 00000260         ;-------------------------------------------------------
+                       --------------------------------------------------------
+                       --------------
+  304 00000260         HandlerIRQ
+  305 00000260 E24EE004        SUB              LR,LR,#4
+  306 00000264         
+
+
+
+ARM Macro Assembler    Page 9 
+
+
+  307 00000264 E321F0DF        MSR              CPSR_c,#2_11011111 ;Switch to S
+                                                            YS mode WITH INTRUP
+                                                            T DISABLE
+  308 00000268 E92D5FFF        STMDB            R13!,{R0-R12,LR} ;Store normal 
+                                                            register
+  309 0000026C E321F0D2        MSR              CPSR_c,#2_11010010 ;Switch to I
+                                                            RQ mode WITH INTRUP
+                                                            T DISABLE
+  310 00000270 E14F0000        MRS              R0,SPSR     ;CPSR=>R0
+  311 00000274 E1A0100E        MOV              R1,LR       ;PC=>R1
+  312 00000278 E321F0DF        MSR              CPSR_c,#2_11011111 ;Switch to S
+                                                            YS mode WITH INTRUP
+                                                            T DISABLE
+  313 0000027C E92D0003        STMDB            R13!,{R0,R1} ;Store CPSR&PC
+  314 00000280         
+  315 00000280 E59F01C8        LDR              R0,=OSIntNesting
+  316 00000284 E5D01000        LDRB             R1,[R0]     ;OSIntNesting=>R1
+  317 00000288 E2811001        ADD              R1,R1,#1
+  318 0000028C E5C01000        STRB             R1,[R0]     ;++OSIntNesting
+  319 00000290         
+  320 00000290 E3510001        CMP              R1,#1       ;Test whether chang
+                                                            e stack or not(for 
+                                                            interrupt nesting)
+  321 00000294 1A000004        BNE              GoISRNow
+  322 00000298 E59F01B4        LDR              R0,=OSTCBCur
+  323 0000029C E5900000        LDR              R0,[R0]
+  324 000002A0 E580D000        STR              R13,[R0]    ;Save SP_usr ONLY W
+                                                            HEN first interrupt
+                                                             entering
+  325 000002A4 E59FD1AC        LDR              R13,=OSIntStk
+  326 000002A8 E28DDE19        ADD              R13,R13,#(OS_IntStkSIZE*OS_StkI
+temSIZE) 
+                                                            ;Switch to INTMODE'
+                                                            s own stack
+  327 000002AC         GoISRNow
+  328 000002AC E59F01A8        LDR              R0,=rINTOFFSET
+  329 000002B0 E5900000        LDR              R0,[R0]
+  330 000002B4 E59FE1A4        LDR              LR,=INTRETURN ;LR_irq = Return 
+                                                            Address
+  331 000002B8 E79FF100        LDR              PC,[PC,R0,LSL#2]
+  332 000002BC E1A00000        NOP                          ;For align
+  333 000002C0         VECTOR_IRQ
+  334 000002C0 00000000        DCD              HandleIRQ   ;00
+  335 000002C4 00000000        DCD              HandleIRQ   ;01
+  336 000002C8 00000000        DCD              HandleIRQ   ;02
+  337 000002CC 00000000        DCD              HandleIRQ   ;03
+  338 000002D0 00000000        DCD              HandleIRQ   ;04
+  339 000002D4 00000000        DCD              HandleIRQ   ;05
+  340 000002D8 00000000        DCD              HandleIRQ   ;06
+  341 000002DC 00000000        DCD              HandleIRQ   ;07
+  342 000002E0 00000000        DCD              HandleIRQ   ;08
+  343 000002E4 00000000        DCD              HandleIRQ   ;09
+  344 000002E8 00000000        DCD              HandleIRQ   ;10
+  345 000002EC 00000000        DCD              HandleIRQ   ;11
+  346 000002F0 00000000        DCD              HandleIRQ   ;12
+  347 000002F4 00000000        DCD              HandleIRQ   ;13
+  348 000002F8 00000000        DCD              OSTickISR   ;14
+  349 000002FC 00000000        DCD              HandleIRQ   ;15
+  350 00000300 00000000        DCD              HandleIRQ   ;16
+
+
+
+ARM Macro Assembler    Page 10 
+
+
+  351 00000304 00000000        DCD              HandleIRQ   ;17
+  352 00000308 00000000        DCD              HandleIRQ   ;18
+  353 0000030C 00000000        DCD              HandleIRQ   ;19
+  354 00000310 00000000        DCD              HandleIRQ   ;20
+  355 00000314 00000000        DCD              HandleIRQ   ;21
+  356 00000318 00000000        DCD              HandleIRQ   ;22
+  357 0000031C 00000000        DCD              HandleIRQ   ;23
+  358 00000320 00000000        DCD              HandleIRQ   ;24
+  359 00000324 00000000        DCD              HandleIRQ   ;25
+  360 00000328 00000000        DCD              HandleIRQ   ;26
+  361 0000032C 00000000        DCD              HandleIRQ   ;27
+  362 00000330 00000000        DCD              HandleIRQ   ;28
+  363 00000334 00000000        DCD              HandleIRQ   ;29
+  364 00000338 00000000        DCD              HandleIRQ   ;30
+  365 0000033C 00000000        DCD              HandleIRQ   ;31
+  366 00000340         
+  367 00000340         INTRETURN
+  368 00000340 E321F0DF        MSR              CPSR_c,#2_11011111 ;Switch to S
+                                                            YS mode WITH INTRUP
+                                                            T DISABLE,ISR end
+  369 00000344         
+  370 00000344 E59F0104        LDR              R0,=OSIntNesting
+  371 00000348 E5D01000        LDRB             R1,[R0]     ;OSIntNesting=>R1
+  372 0000034C         
+  373 0000034C E3510000        CMP              R1,#0       ;Test whether recov
+                                                            er stack or not(for
+                                                             nesting interrupt 
+                                                            exit)
+  374 00000350 1A000002        BNE              NoRecoverSP
+  375 00000354 E59F00F8        LDR              R0,=OSTCBCur
+  376 00000358 E5900000        LDR              R0,[R0]
+  377 0000035C E590D000        LDR              R13,[R0]    ;Recover SP_usr ONL
+                                                            Y WHEN no interrupt
+                                                             left
+  378 00000360         NoRecoverSP
+  379 00000360 E8BD0003        LDMIA            R13!,{R0,R1} ;Get CPSR&PC
+  380 00000364 E321F0D2        MSR              CPSR_c,#2_11010010 ;Switch to I
+                                                            RQ mode WITH INTRUP
+                                                            T DISABLE
+  381 00000368 E1A0E001        MOV              LR,R1       ;PC->LR_irq
+  382 0000036C E16FF000        MSR              SPSR_cxsf,R0 ;CPSR->SPSR_irq
+  383 00000370 E321F0DF        MSR              CPSR_c,#2_11011111 ;Switch to S
+                                                            YS mode WITH INTRUP
+                                                            T DISABLE
+  384 00000374 E8BD5FFF        LDMIA            R13!,{R0-R12,LR} ;Recover norma
+                                                            l register
+  385 00000378 E321F0D2        MSR              CPSR_c,#2_11010010 ;Switch to I
+                                                            RQ mode WITH INTRUP
+                                                            T DISABLE
+  386 0000037C         
+  387 0000037C E1B0F00E        MOVS             PC,LR
+  388 00000380         
+  389 00000380         ;-------------------------------------------------------
+                       --------------------------------------------------------
+                       --------------
+  390 00000380         HandlerFIQ
+  391 00000380 E92D40FF        STMDB            SP!,BK_FIQ  ;STMFD
+  392 00000384 EB000001        BL               FIQ_Exception
+  393 00000388         
+
+
+
+ARM Macro Assembler    Page 11 
+
+
+  394 00000388 E8BD40FF        LDMIA            SP!,BK_FIQ  ;LDMFD
+  395 0000038C E25EF004        SUBS             PC,LR,#4
+  396 00000390         
+  397 00000390         FIQ_Exception                        ;code exception beh
+                                                            aviour here
+  398 00000390         
+  399 00000390 E12FFF1E        BX               LR          ;return
+  400 00000394         
+  401 00000394         BUSINIT
+  402 00000394 22111120        DCD              (B7_BWCON<<28):OR:(B6_BWCON<<24
+):OR:(B5_BWCON<<20):OR:(B4_BWCON<<16):OR:(B3_BWCON<<12):OR:(B2_BWCON<<8):OR:(B1
+_BWCON<<4) 
+                                                            ; rBWSCON
+  403 00000398 00007FF4        DCD              (0x3<<13):OR:(0x3<<11):OR:(0x7<
+<8):OR:(0x3<<6):OR:(0x3<<4):OR:(0x1<<2):OR:(0<<0) 
+                                                            ; rBANKCON0
+  404 0000039C 00002E50        DCD              (1<<13):OR:(1<<11):OR:(6<<8):OR
+:(1<<6):OR:(1<<4):OR:(0<<2):OR:(0<<0) 
+                                                            ; rBANKCON1
+  405 000003A0 00002E50        DCD              (1<<13):OR:(1<<11):OR:(6<<8):OR
+:(1<<6):OR:(1<<4):OR:(0<<2):OR:(0<<0) 
+                                                            ; rBANKCON2
+  406 000003A4 00002E50        DCD              (1<<13):OR:(1<<11):OR:(6<<8):OR
+:(1<<6):OR:(1<<4):OR:(0<<2):OR:(0<<0) 
+                                                            ; rBANKCON3
+  407 000003A8 00002E50        DCD              (1<<13):OR:(1<<11):OR:(6<<8):OR
+:(1<<6):OR:(1<<4):OR:(0<<2):OR:(0<<0) 
+                                                            ; rBANKCON4
+  408 000003AC 00002E50        DCD              (1<<13):OR:(1<<11):OR:(6<<8):OR
+:(1<<6):OR:(1<<4):OR:(0<<2):OR:(0<<0) 
+                                                            ; rBANKCON5
+  409 000003B0 00018001        DCD              (3<<15):OR:(0<<2):OR:(1<<0) ; r
+                                                            BANKCON6(SDRAM),Trc
+                                                            d=18ns ,Column addr
+                                                            ess number = 9-bit
+  410 000003B4 00018001        DCD              (3<<15):OR:(0<<2):OR:(1<<0) ; r
+                                                            BANKCON7(SDRAM),Trc
+                                                            d=18ns ,Column addr
+                                                            ess number = 9-bit
+  411 000003B8 008404F5        DCD              (1<<23):OR:(0<<22):OR:(0<<20):O
+R:(1<<18):OR:(1269) 
+                                                            ; rREFRESH(SDRAM),p
+                                                            eriod=7.8125uS(64ms
+                                                            /8192),Trp=18ns,Trc
+                                                            =60ns,Tsrc=42ns
+  412 000003BC 000000B1        DCD              (1<<7):OR:(1<<5):OR:(1<<4):OR:(
+1<<0) 
+                                                            ; rBANKSIZE(64MB)
+  413 000003C0 00000030        DCD              (3<<4)      ; rMRSRB6
+  414 000003C4 00000030        DCD              (3<<4)      ; rMRSRB6
+  415 000003C8                 END
+              4A000008 
+              4A00001C 
+              0000FFFF 
+              4C000014 
+              4C000008 
+              00038022 
+              4C000004 
+              0007F021 
+
+
+
+ARM Macro Assembler    Page 12 
+
+
+              00000000 
+              56000070 
+              0000FAAA 
+              56000078 
+              50000028 
+              50004000 
+              50004004 
+              50004008 
+              5000400C 
+              50004028 
+              00000145 
+              31FFD800 
+              31FFDC00 
+              31FFE000 
+              31FFF000 
+              32000000 
+              31FFC800 
+              56000060 
+              0080A882 
+              56000068 
+              560000A4 
+              FFF716FF 
+              560000A8 
+              4A000004 
+              EF7FBFDF 
+              00007FD2 
+              00000000 
+              00000000 
+              00000000 
+              4A000014 
+              00000000 
+Command Line: --debug --xref --cpu=ARM920T --apcs=interwork --depend=.\build\st
+artup.d -o.\build\startup.o -ID:\Bitman\Keil_v5\ARM\RV31\INC -ID:\Bitman\Keil_v
+5\ARM\CMSIS\Include -ID:\Bitman\Keil_v5\ARM\Inc\Samsung --list=.\startup.lst sr
+c\cpu\STARTUP.S
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BUSINIT 00000394
+
+Symbol: BUSINIT
+   Definitions
+      At line 401 in file src\cpu\STARTUP.S
+   Uses
+      At line 157 in file src\cpu\STARTUP.S
+Comment: BUSINIT used once
+FIQDisable 000001D0
+
+Symbol: FIQDisable
+   Definitions
+      At line 257 in file src\cpu\STARTUP.S
+   Uses
+      At line 242 in file src\cpu\STARTUP.S
+Comment: FIQDisable used once
+FIQEnable 000001E0
+
+Symbol: FIQEnable
+   Definitions
+      At line 262 in file src\cpu\STARTUP.S
+   Uses
+      At line 243 in file src\cpu\STARTUP.S
+Comment: FIQEnable used once
+FIQ_Exception 00000390
+
+Symbol: FIQ_Exception
+   Definitions
+      At line 397 in file src\cpu\STARTUP.S
+   Uses
+      At line 392 in file src\cpu\STARTUP.S
+Comment: FIQ_Exception used once
+GoISRNow 000002AC
+
+Symbol: GoISRNow
+   Definitions
+      At line 327 in file src\cpu\STARTUP.S
+   Uses
+      At line 321 in file src\cpu\STARTUP.S
+Comment: GoISRNow used once
+HandlerDabort 0000025C
+
+Symbol: HandlerDabort
+   Definitions
+      At line 301 in file src\cpu\STARTUP.S
+   Uses
+      At line 109 in file src\cpu\STARTUP.S
+      At line 302 in file src\cpu\STARTUP.S
+
+HandlerFIQ 00000380
+
+Symbol: HandlerFIQ
+   Definitions
+      At line 390 in file src\cpu\STARTUP.S
+   Uses
+      At line 112 in file src\cpu\STARTUP.S
+Comment: HandlerFIQ used once
+HandlerIRQ 00000260
+
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: HandlerIRQ
+   Definitions
+      At line 304 in file src\cpu\STARTUP.S
+   Uses
+      At line 111 in file src\cpu\STARTUP.S
+Comment: HandlerIRQ used once
+HandlerPabort 00000258
+
+Symbol: HandlerPabort
+   Definitions
+      At line 298 in file src\cpu\STARTUP.S
+   Uses
+      At line 108 in file src\cpu\STARTUP.S
+      At line 299 in file src\cpu\STARTUP.S
+
+HandlerSWI 00000188
+
+Symbol: HandlerSWI
+   Definitions
+      At line 234 in file src\cpu\STARTUP.S
+   Uses
+      At line 107 in file src\cpu\STARTUP.S
+Comment: HandlerSWI used once
+HandlerUndef 00000184
+
+Symbol: HandlerUndef
+   Definitions
+      At line 231 in file src\cpu\STARTUP.S
+   Uses
+      At line 106 in file src\cpu\STARTUP.S
+Comment: HandlerUndef used once
+INTRETURN 00000340
+
+Symbol: INTRETURN
+   Definitions
+      At line 367 in file src\cpu\STARTUP.S
+   Uses
+      At line 330 in file src\cpu\STARTUP.S
+Comment: INTRETURN used once
+IRQDisable 000001B0
+
+Symbol: IRQDisable
+   Definitions
+      At line 247 in file src\cpu\STARTUP.S
+   Uses
+      At line 240 in file src\cpu\STARTUP.S
+Comment: IRQDisable used once
+IRQEnable 000001C0
+
+Symbol: IRQEnable
+   Definitions
+      At line 252 in file src\cpu\STARTUP.S
+   Uses
+      At line 241 in file src\cpu\STARTUP.S
+Comment: IRQEnable used once
+Init 00000000
+
+Symbol: Init
+   Definitions
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 102 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: Init unused
+NoRecoverSP 00000360
+
+Symbol: NoRecoverSP
+   Definitions
+      At line 378 in file src\cpu\STARTUP.S
+   Uses
+      At line 374 in file src\cpu\STARTUP.S
+Comment: NoRecoverSP used once
+OSSetCPSR 00000250
+
+Symbol: OSSetCPSR
+   Definitions
+      At line 292 in file src\cpu\STARTUP.S
+   Uses
+      At line 246 in file src\cpu\STARTUP.S
+Comment: OSSetCPSR used once
+ResetInit 00000020
+
+Symbol: ResetInit
+   Definitions
+      At line 115 in file src\cpu\STARTUP.S
+   Uses
+      At line 105 in file src\cpu\STARTUP.S
+      At line 232 in file src\cpu\STARTUP.S
+
+SETIRQReg 000001F0
+
+Symbol: SETIRQReg
+   Definitions
+      At line 267 in file src\cpu\STARTUP.S
+   Uses
+      At line 244 in file src\cpu\STARTUP.S
+Comment: SETIRQReg used once
+SWIFUNC_SWI 00000194
+
+Symbol: SWIFUNC_SWI
+   Definitions
+      At line 239 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: SWIFUNC_SWI unused
+StackInit 0000014C
+
+Symbol: StackInit
+   Definitions
+      At line 212 in file src\cpu\STARTUP.S
+   Uses
+      At line 156 in file src\cpu\STARTUP.S
+Comment: StackInit used once
+VECTOR_IRQ 000002C0
+
+Symbol: VECTOR_IRQ
+   Definitions
+      At line 333 in file src\cpu\STARTUP.S
+   Uses
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Relocatable symbols
+
+      None
+Comment: VECTOR_IRQ unused
+22 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+ABTMODE 00000017
+
+Symbol: ABTMODE
+   Definitions
+      At line 80 in file src\cpu\STARTUP.S
+   Uses
+      At line 219 in file src\cpu\STARTUP.S
+Comment: ABTMODE used once
+B1_BWCON 00000002
+
+Symbol: B1_BWCON
+   Definitions
+      At line 58 in file src\cpu\STARTUP.S
+   Uses
+      At line 402 in file src\cpu\STARTUP.S
+Comment: B1_BWCON used once
+B2_BWCON 00000001
+
+Symbol: B2_BWCON
+   Definitions
+      At line 59 in file src\cpu\STARTUP.S
+   Uses
+      At line 402 in file src\cpu\STARTUP.S
+Comment: B2_BWCON used once
+B3_BWCON 00000001
+
+Symbol: B3_BWCON
+   Definitions
+      At line 60 in file src\cpu\STARTUP.S
+   Uses
+      At line 402 in file src\cpu\STARTUP.S
+Comment: B3_BWCON used once
+B4_BWCON 00000001
+
+Symbol: B4_BWCON
+   Definitions
+      At line 61 in file src\cpu\STARTUP.S
+   Uses
+      At line 402 in file src\cpu\STARTUP.S
+Comment: B4_BWCON used once
+B5_BWCON 00000001
+
+Symbol: B5_BWCON
+   Definitions
+      At line 62 in file src\cpu\STARTUP.S
+   Uses
+      At line 402 in file src\cpu\STARTUP.S
+Comment: B5_BWCON used once
+B6_BWCON 00000002
+
+Symbol: B6_BWCON
+   Definitions
+      At line 63 in file src\cpu\STARTUP.S
+   Uses
+      At line 402 in file src\cpu\STARTUP.S
+Comment: B6_BWCON used once
+B7_BWCON 00000002
+
+Symbol: B7_BWCON
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 64 in file src\cpu\STARTUP.S
+   Uses
+      At line 402 in file src\cpu\STARTUP.S
+Comment: B7_BWCON used once
+FIQMODE 00000011
+
+Symbol: FIQMODE
+   Definitions
+      At line 77 in file src\cpu\STARTUP.S
+   Uses
+      At line 223 in file src\cpu\STARTUP.S
+Comment: FIQMODE used once
+FIQMSK 00000040
+
+Symbol: FIQMSK
+   Definitions
+      At line 86 in file src\cpu\STARTUP.S
+   Uses
+      At line 215 in file src\cpu\STARTUP.S
+      At line 219 in file src\cpu\STARTUP.S
+      At line 221 in file src\cpu\STARTUP.S
+      At line 223 in file src\cpu\STARTUP.S
+      At line 225 in file src\cpu\STARTUP.S
+      At line 259 in file src\cpu\STARTUP.S
+      At line 264 in file src\cpu\STARTUP.S
+
+IRQMODE 00000012
+
+Symbol: IRQMODE
+   Definitions
+      At line 78 in file src\cpu\STARTUP.S
+   Uses
+      At line 221 in file src\cpu\STARTUP.S
+Comment: IRQMODE used once
+IRQMSK 00000080
+
+Symbol: IRQMSK
+   Definitions
+      At line 85 in file src\cpu\STARTUP.S
+   Uses
+      At line 215 in file src\cpu\STARTUP.S
+      At line 217 in file src\cpu\STARTUP.S
+      At line 217 in file src\cpu\STARTUP.S
+      At line 219 in file src\cpu\STARTUP.S
+      At line 221 in file src\cpu\STARTUP.S
+      At line 223 in file src\cpu\STARTUP.S
+      At line 225 in file src\cpu\STARTUP.S
+      At line 249 in file src\cpu\STARTUP.S
+      At line 254 in file src\cpu\STARTUP.S
+
+MAX_SWINUM 00000007
+
+Symbol: MAX_SWINUM
+   Definitions
+      At line 17 in file src\cpu\STARTUP.S
+   Uses
+      At line 235 in file src\cpu\STARTUP.S
+Comment: MAX_SWINUM used once
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Absolute symbols
+
+M_MDIV 0000007F
+
+Symbol: M_MDIV
+   Definitions
+      At line 71 in file src\cpu\STARTUP.S
+   Uses
+      At line 148 in file src\cpu\STARTUP.S
+Comment: M_MDIV used once
+M_PDIV 00000002
+
+Symbol: M_PDIV
+   Definitions
+      At line 72 in file src\cpu\STARTUP.S
+   Uses
+      At line 148 in file src\cpu\STARTUP.S
+Comment: M_PDIV used once
+M_SDIV 00000001
+
+Symbol: M_SDIV
+   Definitions
+      At line 73 in file src\cpu\STARTUP.S
+   Uses
+      At line 148 in file src\cpu\STARTUP.S
+Comment: M_SDIV used once
+NOINT 000000C0
+
+Symbol: NOINT
+   Definitions
+      At line 87 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: NOINT unused
+OS_IntStkSIZE 00000064
+
+Symbol: OS_IntStkSIZE
+   Definitions
+      At line 98 in file src\cpu\STARTUP.S
+   Uses
+      At line 326 in file src\cpu\STARTUP.S
+Comment: OS_IntStkSIZE used once
+OS_StkItemSIZE 00000004
+
+Symbol: OS_StkItemSIZE
+   Definitions
+      At line 99 in file src\cpu\STARTUP.S
+   Uses
+      At line 326 in file src\cpu\STARTUP.S
+Comment: OS_StkItemSIZE used once
+SVCMODE 00000013
+
+Symbol: SVCMODE
+   Definitions
+      At line 79 in file src\cpu\STARTUP.S
+   Uses
+      At line 215 in file src\cpu\STARTUP.S
+Comment: SVCMODE used once
+SYSMODE 0000001F
+
+Symbol: SYSMODE
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 82 in file src\cpu\STARTUP.S
+   Uses
+      At line 225 in file src\cpu\STARTUP.S
+Comment: SYSMODE used once
+StackAbt 31FFE000
+
+Symbol: StackAbt
+   Definitions
+      At line 93 in file src\cpu\STARTUP.S
+   Uses
+      At line 220 in file src\cpu\STARTUP.S
+Comment: StackAbt used once
+StackFiq 32000000
+
+Symbol: StackFiq
+   Definitions
+      At line 95 in file src\cpu\STARTUP.S
+   Uses
+      At line 224 in file src\cpu\STARTUP.S
+Comment: StackFiq used once
+StackIrq 31FFF000
+
+Symbol: StackIrq
+   Definitions
+      At line 94 in file src\cpu\STARTUP.S
+   Uses
+      At line 222 in file src\cpu\STARTUP.S
+Comment: StackIrq used once
+StackSvc 31FFD800
+
+Symbol: StackSvc
+   Definitions
+      At line 91 in file src\cpu\STARTUP.S
+   Uses
+      At line 216 in file src\cpu\STARTUP.S
+Comment: StackSvc used once
+StackUnd 31FFDC00
+
+Symbol: StackUnd
+   Definitions
+      At line 92 in file src\cpu\STARTUP.S
+   Uses
+      At line 218 in file src\cpu\STARTUP.S
+Comment: StackUnd used once
+StackUse 31FFC800
+
+Symbol: StackUse
+   Definitions
+      At line 90 in file src\cpu\STARTUP.S
+   Uses
+      At line 226 in file src\cpu\STARTUP.S
+Comment: StackUse used once
+UNDMODE 0000001B
+
+Symbol: UNDMODE
+   Definitions
+      At line 81 in file src\cpu\STARTUP.S
+   Uses
+
+
+
+ARM Macro Assembler    Page 5 Alphabetic symbol ordering
+Absolute symbols
+
+      At line 217 in file src\cpu\STARTUP.S
+Comment: UNDMODE used once
+USRMODE 00000010
+
+Symbol: USRMODE
+   Definitions
+      At line 76 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: USRMODE unused
+U_MDIV 00000038
+
+Symbol: U_MDIV
+   Definitions
+      At line 67 in file src\cpu\STARTUP.S
+   Uses
+      At line 137 in file src\cpu\STARTUP.S
+Comment: U_MDIV used once
+U_PDIV 00000002
+
+Symbol: U_PDIV
+   Definitions
+      At line 68 in file src\cpu\STARTUP.S
+   Uses
+      At line 137 in file src\cpu\STARTUP.S
+Comment: U_PDIV used once
+U_SDIV 00000002
+
+Symbol: U_SDIV
+   Definitions
+      At line 69 in file src\cpu\STARTUP.S
+   Uses
+      At line 137 in file src\cpu\STARTUP.S
+Comment: U_SDIV used once
+_STACKBASEADDR 32000000
+
+Symbol: _STACKBASEADDR
+   Definitions
+      At line 19 in file src\cpu\STARTUP.S
+   Uses
+      At line 90 in file src\cpu\STARTUP.S
+      At line 91 in file src\cpu\STARTUP.S
+      At line 92 in file src\cpu\STARTUP.S
+      At line 93 in file src\cpu\STARTUP.S
+      At line 94 in file src\cpu\STARTUP.S
+      At line 95 in file src\cpu\STARTUP.S
+
+rBWSCON 48000000
+
+Symbol: rBWSCON
+   Definitions
+      At line 20 in file src\cpu\STARTUP.S
+   Uses
+      At line 158 in file src\cpu\STARTUP.S
+Comment: rBWSCON used once
+rCLKDIVN 4C000014
+
+Symbol: rCLKDIVN
+   Definitions
+
+
+
+ARM Macro Assembler    Page 6 Alphabetic symbol ordering
+Absolute symbols
+
+      At line 31 in file src\cpu\STARTUP.S
+   Uses
+      At line 132 in file src\cpu\STARTUP.S
+Comment: rCLKDIVN used once
+rEINTMASK 560000A4
+
+Symbol: rEINTMASK
+   Definitions
+      At line 54 in file src\cpu\STARTUP.S
+   Uses
+      At line 275 in file src\cpu\STARTUP.S
+Comment: rEINTMASK used once
+rEINTPEND 560000A8
+
+Symbol: rEINTPEND
+   Definitions
+      At line 55 in file src\cpu\STARTUP.S
+   Uses
+      At line 278 in file src\cpu\STARTUP.S
+Comment: rEINTPEND used once
+rGPBCON 56000010
+
+Symbol: rGPBCON
+   Definitions
+      At line 47 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: rGPBCON unused
+rGPBDAT 56000014
+
+Symbol: rGPBDAT
+   Definitions
+      At line 48 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: rGPBDAT unused
+rGPGCON 56000060
+
+Symbol: rGPGCON
+   Definitions
+      At line 49 in file src\cpu\STARTUP.S
+   Uses
+      At line 269 in file src\cpu\STARTUP.S
+Comment: rGPGCON used once
+rGPGUP 56000068
+
+Symbol: rGPGUP
+   Definitions
+      At line 50 in file src\cpu\STARTUP.S
+   Uses
+      At line 272 in file src\cpu\STARTUP.S
+Comment: rGPGUP used once
+rGPHCON 56000070
+
+Symbol: rGPHCON
+   Definitions
+      At line 51 in file src\cpu\STARTUP.S
+   Uses
+      At line 164 in file src\cpu\STARTUP.S
+
+
+
+ARM Macro Assembler    Page 7 Alphabetic symbol ordering
+Absolute symbols
+
+Comment: rGPHCON used once
+rGPHDAT 56000074
+
+Symbol: rGPHDAT
+   Definitions
+      At line 52 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: rGPHDAT unused
+rGPHUP 56000078
+
+Symbol: rGPHUP
+   Definitions
+      At line 53 in file src\cpu\STARTUP.S
+   Uses
+      At line 167 in file src\cpu\STARTUP.S
+Comment: rGPHUP used once
+rINTMOD 4A000004
+
+Symbol: rINTMOD
+   Definitions
+      At line 22 in file src\cpu\STARTUP.S
+   Uses
+      At line 281 in file src\cpu\STARTUP.S
+Comment: rINTMOD used once
+rINTMSK 4A000008
+
+Symbol: rINTMSK
+   Definitions
+      At line 23 in file src\cpu\STARTUP.S
+   Uses
+      At line 120 in file src\cpu\STARTUP.S
+      At line 284 in file src\cpu\STARTUP.S
+
+rINTOFFSET 4A000014
+
+Symbol: rINTOFFSET
+   Definitions
+      At line 25 in file src\cpu\STARTUP.S
+   Uses
+      At line 328 in file src\cpu\STARTUP.S
+Comment: rINTOFFSET used once
+rINTPND 4A000010
+
+Symbol: rINTPND
+   Definitions
+      At line 24 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: rINTPND unused
+rINTSUBMSK 4A00001C
+
+Symbol: rINTSUBMSK
+   Definitions
+      At line 27 in file src\cpu\STARTUP.S
+   Uses
+      At line 123 in file src\cpu\STARTUP.S
+      At line 287 in file src\cpu\STARTUP.S
+
+
+
+
+ARM Macro Assembler    Page 8 Alphabetic symbol ordering
+Absolute symbols
+
+rLOCKTIME 4C000000
+
+Symbol: rLOCKTIME
+   Definitions
+      At line 28 in file src\cpu\STARTUP.S
+   Uses
+      At line 128 in file src\cpu\STARTUP.S
+Comment: rLOCKTIME used once
+rMPLLCON 4C000004
+
+Symbol: rMPLLCON
+   Definitions
+      At line 29 in file src\cpu\STARTUP.S
+   Uses
+      At line 147 in file src\cpu\STARTUP.S
+Comment: rMPLLCON used once
+rSRCPND 4A000000
+
+Symbol: rSRCPND
+   Definitions
+      At line 21 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: rSRCPND unused
+rSUBSRCPND 4A000018
+
+Symbol: rSUBSRCPND
+   Definitions
+      At line 26 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: rSUBSRCPND unused
+rUBRDIV0 50000028
+
+Symbol: rUBRDIV0
+   Definitions
+      At line 36 in file src\cpu\STARTUP.S
+   Uses
+      At line 183 in file src\cpu\STARTUP.S
+Comment: rUBRDIV0 used once
+rUBRDIV1 50004028
+
+Symbol: rUBRDIV1
+   Definitions
+      At line 43 in file src\cpu\STARTUP.S
+   Uses
+      At line 199 in file src\cpu\STARTUP.S
+Comment: rUBRDIV1 used once
+rUCON0 50000004
+
+Symbol: rUCON0
+   Definitions
+      At line 33 in file src\cpu\STARTUP.S
+   Uses
+      At line 174 in file src\cpu\STARTUP.S
+Comment: rUCON0 used once
+rUCON1 50004004
+
+Symbol: rUCON1
+
+
+
+ARM Macro Assembler    Page 9 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 40 in file src\cpu\STARTUP.S
+   Uses
+      At line 190 in file src\cpu\STARTUP.S
+Comment: rUCON1 used once
+rUFCON0 50000008
+
+Symbol: rUFCON0
+   Definitions
+      At line 34 in file src\cpu\STARTUP.S
+   Uses
+      At line 177 in file src\cpu\STARTUP.S
+Comment: rUFCON0 used once
+rUFCON1 50004008
+
+Symbol: rUFCON1
+   Definitions
+      At line 41 in file src\cpu\STARTUP.S
+   Uses
+      At line 193 in file src\cpu\STARTUP.S
+Comment: rUFCON1 used once
+rULCON0 50000000
+
+Symbol: rULCON0
+   Definitions
+      At line 32 in file src\cpu\STARTUP.S
+   Uses
+      At line 171 in file src\cpu\STARTUP.S
+Comment: rULCON0 used once
+rULCON1 50004000
+
+Symbol: rULCON1
+   Definitions
+      At line 39 in file src\cpu\STARTUP.S
+   Uses
+      At line 187 in file src\cpu\STARTUP.S
+Comment: rULCON1 used once
+rUMCON0 5000000C
+
+Symbol: rUMCON0
+   Definitions
+      At line 35 in file src\cpu\STARTUP.S
+   Uses
+      At line 180 in file src\cpu\STARTUP.S
+Comment: rUMCON0 used once
+rUMCON1 5000400C
+
+Symbol: rUMCON1
+   Definitions
+      At line 42 in file src\cpu\STARTUP.S
+   Uses
+      At line 196 in file src\cpu\STARTUP.S
+Comment: rUMCON1 used once
+rUPLLCON 4C000008
+
+Symbol: rUPLLCON
+   Definitions
+      At line 30 in file src\cpu\STARTUP.S
+   Uses
+
+
+
+ARM Macro Assembler    Page 10 Alphabetic symbol ordering
+Absolute symbols
+
+      At line 136 in file src\cpu\STARTUP.S
+Comment: rUPLLCON used once
+rURXH0 50000027
+
+Symbol: rURXH0
+   Definitions
+      At line 38 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: rURXH0 unused
+rURXH1 50004027
+
+Symbol: rURXH1
+   Definitions
+      At line 45 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: rURXH1 unused
+rUTXH0 50000023
+
+Symbol: rUTXH0
+   Definitions
+      At line 37 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: rUTXH0 unused
+rUTXH1 50004023
+
+Symbol: rUTXH1
+   Definitions
+      At line 44 in file src\cpu\STARTUP.S
+   Uses
+      None
+Comment: rUTXH1 unused
+rWTCON 53000000
+
+Symbol: rWTCON
+   Definitions
+      At line 46 in file src\cpu\STARTUP.S
+   Uses
+      At line 116 in file src\cpu\STARTUP.S
+Comment: rWTCON used once
+69 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+HandleIRQ 00000000
+
+Symbol: HandleIRQ
+   Definitions
+      At line 4 in file src\cpu\STARTUP.S
+   Uses
+      At line 334 in file src\cpu\STARTUP.S
+      At line 335 in file src\cpu\STARTUP.S
+      At line 336 in file src\cpu\STARTUP.S
+      At line 337 in file src\cpu\STARTUP.S
+      At line 338 in file src\cpu\STARTUP.S
+      At line 339 in file src\cpu\STARTUP.S
+      At line 340 in file src\cpu\STARTUP.S
+      At line 341 in file src\cpu\STARTUP.S
+      At line 342 in file src\cpu\STARTUP.S
+      At line 343 in file src\cpu\STARTUP.S
+      At line 344 in file src\cpu\STARTUP.S
+      At line 345 in file src\cpu\STARTUP.S
+      At line 346 in file src\cpu\STARTUP.S
+      At line 347 in file src\cpu\STARTUP.S
+      At line 349 in file src\cpu\STARTUP.S
+      At line 350 in file src\cpu\STARTUP.S
+      At line 351 in file src\cpu\STARTUP.S
+      At line 352 in file src\cpu\STARTUP.S
+      At line 353 in file src\cpu\STARTUP.S
+      At line 354 in file src\cpu\STARTUP.S
+      At line 355 in file src\cpu\STARTUP.S
+      At line 356 in file src\cpu\STARTUP.S
+      At line 357 in file src\cpu\STARTUP.S
+      At line 358 in file src\cpu\STARTUP.S
+      At line 359 in file src\cpu\STARTUP.S
+      At line 360 in file src\cpu\STARTUP.S
+      At line 361 in file src\cpu\STARTUP.S
+      At line 362 in file src\cpu\STARTUP.S
+      At line 363 in file src\cpu\STARTUP.S
+      At line 364 in file src\cpu\STARTUP.S
+      At line 365 in file src\cpu\STARTUP.S
+
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 3 in file src\cpu\STARTUP.S
+   Uses
+      At line 209 in file src\cpu\STARTUP.S
+Comment: Main used once
+OSCtxSw 00000000
+
+Symbol: OSCtxSw
+   Definitions
+      At line 5 in file src\cpu\STARTUP.S
+   Uses
+      At line 245 in file src\cpu\STARTUP.S
+Comment: OSCtxSw used once
+OSIntNesting 00000000
+
+Symbol: OSIntNesting
+   Definitions
+      At line 8 in file src\cpu\STARTUP.S
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+External symbols
+
+   Uses
+      At line 315 in file src\cpu\STARTUP.S
+      At line 370 in file src\cpu\STARTUP.S
+
+OSIntStk 00000000
+
+Symbol: OSIntStk
+   Definitions
+      At line 9 in file src\cpu\STARTUP.S
+   Uses
+      At line 325 in file src\cpu\STARTUP.S
+Comment: OSIntStk used once
+OSTCBCur 00000000
+
+Symbol: OSTCBCur
+   Definitions
+      At line 7 in file src\cpu\STARTUP.S
+   Uses
+      At line 322 in file src\cpu\STARTUP.S
+      At line 375 in file src\cpu\STARTUP.S
+
+OSTickISR 00000000
+
+Symbol: OSTickISR
+   Definitions
+      At line 6 in file src\cpu\STARTUP.S
+   Uses
+      At line 348 in file src\cpu\STARTUP.S
+Comment: OSTickISR used once
+7 symbols
+434 symbols in table

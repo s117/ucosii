@@ -1,0 +1,54 @@
+Dependencies for Project 'uCOS-II', Target 'Target 1': (DO NOT MODIFY !)
+F (.\src\includes\dataformat.h)(0x538C5F70)()
+F (.\src\includes\includes.h)(0x5316101F)()
+F (.\src\includes\OS_CFG.H)(0x53161011)()
+F (.\src\includes\OS_CPU.H)(0x5314B486)()
+F (.\src\includes\ucos_ii.h)(0x3C50EFBC)()
+F (.\src\includes\usr_includes.h)(0x531ACF12)()
+F (.\src\cpu\OS_CPU_A.S)(0x5315F2BA)(--cpu ARM920T -g --apcs=interwork -I D:\Bitman\Keil_v5\ARM\RV31\INC-I D:\Bitman\Keil_v5\ARM\CMSIS\Include-I D:\Bitman\Keil_v5\ARM\Inc\Samsung--list .\os_cpu_a.lst --xref -o .\build\os_cpu_a.o --depend .\build\os_cpu_a.d)
+F (.\src\cpu\OS_CPU_C.C)(0x5316109C)(-c --cpu ARM920T -g -O0 --apcs=interwork -I D:\Bitman\Keil_v5\ARM\RV31\INC-I D:\Bitman\Keil_v5\ARM\CMSIS\Include-I D:\Bitman\Keil_v5\ARM\Inc\Samsung-o .\build\os_cpu_c.o --omf_browse .\build\os_cpu_c.crf --depend .\build\os_cpu_c.d)
+I (D:\Bitman\uC_OS\uCOS-II\src\includes\OS_CPU.H)(0x5314B486)
+I (D:\Bitman\uC_OS\uCOS-II\src\includes\OS_CFG.H)(0x53161011)
+I (D:\Bitman\uC_OS\uCOS-II\src\includes\ucos_ii.h)(0x3C50EFBC)
+F (.\src\cpu\STARTUP.S)(0x5316B431)(--cpu ARM920T -g --apcs=interwork -I D:\Bitman\Keil_v5\ARM\RV31\INC-I D:\Bitman\Keil_v5\ARM\CMSIS\Include-I D:\Bitman\Keil_v5\ARM\Inc\Samsung--list .\startup.lst --xref -o .\build\startup.o --depend .\build\startup.d)
+F (.\src\os\ucos_ii.c)(0x53160F1E)(-c --cpu ARM920T -g -O0 --apcs=interwork -I D:\Bitman\Keil_v5\ARM\RV31\INC-I D:\Bitman\Keil_v5\ARM\CMSIS\Include-I D:\Bitman\Keil_v5\ARM\Inc\Samsung-o .\build\ucos_ii.o --omf_browse .\build\ucos_ii.crf --depend .\build\ucos_ii.d)
+I (src\os\../includes/includes.h)(0x5316101F)
+I (D:\Bitman\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (D:\Bitman\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (D:\Bitman\Keil_v5\ARM\ARMCC\include\ctype.h)(0x53463A44)
+I (D:\Bitman\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (src\os\../includes/OS_CPU.H)(0x5314B486)
+I (src\os\../includes/OS_CFG.H)(0x53161011)
+I (src\os\../includes/ucos_ii.h)(0x3C50EFBC)
+I (src\os\OS_CORE.C)(0x53160E46)
+I (src\os\OS_FLAG.C)(0x53160DC3)
+I (src\os\OS_MBOX.C)(0x53160DC6)
+I (src\os\OS_MEM.C)(0x53160DC9)
+I (src\os\OS_MUTEX.C)(0x53160E48)
+I (src\os\OS_Q.C)(0x53160E48)
+I (src\os\OS_SEM.C)(0x53160E48)
+I (src\os\OS_TASK.C)(0x53160E48)
+I (src\os\OS_TIME.C)(0x53160E48)
+F (.\src\usr\logger.c)(0x531752B7)(-c --cpu ARM920T -g -O0 --apcs=interwork -I D:\Bitman\Keil_v5\ARM\RV31\INC-I D:\Bitman\Keil_v5\ARM\CMSIS\Include-I D:\Bitman\Keil_v5\ARM\Inc\Samsung-o .\build\logger.o --omf_browse .\build\logger.crf --depend .\build\logger.d)
+I (src\usr\../includes/includes.h)(0x5316101F)
+I (D:\Bitman\Keil_v5\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (D:\Bitman\Keil_v5\ARM\ARMCC\include\string.h)(0x53463A44)
+I (D:\Bitman\Keil_v5\ARM\ARMCC\include\ctype.h)(0x53463A44)
+I (D:\Bitman\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (src\usr\../includes/OS_CPU.H)(0x5314B486)
+I (src\usr\../includes/OS_CFG.H)(0x53161011)
+I (src\usr\../includes/ucos_ii.h)(0x3C50EFBC)
+I (src\usr\../includes/dataformat.h)(0x538C5F70)
+I (src\usr\../includes/usr_includes.h)(0x531ACF12)
+F (.\src\usr\SYSTEM_CODE.C)(0x5316157D)(-c --cpu ARM920T -g -O0 --apcs=interwork -I D:\Bitman\Keil_v5\ARM\RV31\INC-I D:\Bitman\Keil_v5\ARM\CMSIS\Include-I D:\Bitman\Keil_v5\ARM\Inc\Samsung-o .\build\system_code.o --omf_browse .\build\system_code.crf --depend .\build\system_code.d)
+I (src\usr\../includes/OS_CPU.H)(0x5314B486)
+I (src\usr\../includes/OS_CFG.H)(0x53161011)
+I (src\usr\../includes/ucos_ii.h)(0x3C50EFBC)
+I (src\usr\../includes/usr_includes.h)(0x531ACF12)
+F (.\src\usr\UTILS_A.S)(0x5315F37E)(--cpu ARM920T -g --apcs=interwork -I D:\Bitman\Keil_v5\ARM\RV31\INC-I D:\Bitman\Keil_v5\ARM\CMSIS\Include-I D:\Bitman\Keil_v5\ARM\Inc\Samsung--list .\utils_a.lst --xref -o .\build\utils_a.o --depend .\build\utils_a.d)
+F (.\src\usr\UTILS_C.C)(0x531ACEC9)(-c --cpu ARM920T -g -O0 --apcs=interwork -I D:\Bitman\Keil_v5\ARM\RV31\INC-I D:\Bitman\Keil_v5\ARM\CMSIS\Include-I D:\Bitman\Keil_v5\ARM\Inc\Samsung-o .\build\utils_c.o --omf_browse .\build\utils_c.crf --depend .\build\utils_c.d)
+I (src\usr\../includes/OS_CPU.H)(0x5314B486)
+I (src\usr\../includes/OS_CFG.H)(0x53161011)
+I (src\usr\../includes/ucos_ii.h)(0x3C50EFBC)
+I (src\usr\../includes/usr_includes.h)(0x531ACF12)
+I (src\usr\../includes/dataformat.h)(0x538C5F70)
